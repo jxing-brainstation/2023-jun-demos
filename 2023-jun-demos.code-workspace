@@ -6,6 +6,12 @@
 	],
 	"settings": {
 		"window.zoomLevel": 2,
-		"files.autoSave": "off"
+		"files.autoSave": "off",
+		"editor.parameterHints.enabled": false,
+		"editor.inlineSuggest.enabled": false,
+		"editor.suggest.matchOnWordStartOnly": false,
+		"editor.acceptSuggestionOnCommitCharacter": false,
+		"editor.acceptSuggestionOnEnter": "off",
+		"editor.quickSuggestionsDelay": 5000
 	}
 }
