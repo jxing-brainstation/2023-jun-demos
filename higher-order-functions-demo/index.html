@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions Demo</title>
+    <script src="./script.js"></script>
+
+</head>
+
+<body>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        section {
+            padding: 0 2rem;
+        }
+    </style>
+
+    <section>
+        <h2> Higher-order function: A function that returns a function or takes other functions as arguments.</h2>
+        <hr>
+        <h2>Higher Order Array Methods From the slides:</h2>
+        <h3>Array.prototype.forEach()</h3>
+        <h4>Parameters: A callback function that is called with 3 arguments: the element, the index, and the array
+            itself. This function should not return anything.</h4>
+        <h4>Return value: undefined</h4>
+        <hr>
+        <h3>Array.prototype.map()</h3>
+        <h4>Parameters: A callback function that is called with 3 arguments: the element, the index, and the array
+            itself. The function should return the new element to add to the new array.</h4>
+        <h4>Return value: a NEW ARRAY with each element changed.</h4>
+        <hr>
+        <h3>Array.prototype.filter()</h3>
+        <h4>Parameters: A callback function that is called with 3 arguments: the element, the index, and the array
+            itself. The function should return either true or false to indicate whether or not you wish to keep the
+            value. </h4>
+        <h4>Return value: A shallow copy of the original array that is filtered or an empty array.</h4>
+        <hr>
+        <h3>Array.prototype.find()</h3>
+        <h4>Parameters: A callback function that is called with 3 arguments: the element, the index, and the array
+            itself. The function should return either true or false to indicate whether or not a matching element is
+            found.</h4>
+        <h4>Return value: the first element in the array that satisfies the testing function or undefined if nothing is
+            found.</h4>
+        <hr>
+        <h3>Array.prototype.sort()</h3>
+        <h4>Parameters: An optional function that defines the sort order. This function is called with two arguments: a
+            and b which represents the first and second elements that are being compared. This function should return an
+            integer. If the integer is positive, a will be sorted after b. If the integer is negative, a will be sorted
+            before b. If the integer is 0, the original order of a and b will be kept.</h4>
+        <h4>Return value: a reference to the original array that is now sorted. </h4>
+        <h4>NOTE: this will mutate the array itself.</h4>
+        <hr>
+
+        <h2>Other useful Higher Order Array methods:</h2>
+        <h3>Array.prototype.every()</h3>
+        <h3>Array.prototype.some()</h3>
+        <h3>Array.prototype.findLast()</h3>
+        <h3>Array.prototype.findIndex()</h3>
+        <h3>Array.prototype.findLastIndex()</h3>
+        <h3>Array.prototype.reduce() [MOST COMPLEX ARRAY METHOD]</h3>
+
+        <h2>Non-higher order Array methods:</h2>
+        <h3>Array.prototype.push()</h3>
+        <h3>Array.prototype.pop()</h3>
+        <h3>Array.prototype.shift()</h3>
+        <h3>Array.prototype.unshift()</h3>
+        <h3>Array.prototype.slice()</h3>
+        <h3>Array.prototype.splice()</h3>
+        <h3>Array.prototype.concat()</h3>
+        <h3>Array.prototype.join()</h3>
+        <h3>Array.prototype.includes()</h3>
+        <h3>Array.prototype.indexOf()</h3>
+        <h3>Array.prototype.reverse()</h3>
+
+    </section>
+
+
+</body>
+
+</html>
