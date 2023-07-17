@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo: Web APIs</title>
-  <link rel="stylesheet" href="./styles.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="./demo.js" defer></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
   <h1>Demo: Web APIs</h1>
-
   <section>
     <h2>Dog Images</h2>
-    <div class="dogimg-container"></div>
+    <img class="dogimg-container">
   </section>
 
   <section>
     <h2>Developer Jokes</h2>
 
     <form id="jokeForm">
+      <label>
+        Question
         <textarea name="question" placeholder="Enter Joke"></textarea>
+      </label>
+      <label>
+        Answer
         <textarea name="answer" placeholder="Enter Answer"></textarea>
-        <button type="submit">Create joke</button>
+      </label>
+      <button type="submit">Create joke</button>
     </form>
 
     <div class="devjokes-container"></div>
   </section>
 
-  <section hidden>
-    DEMO:
-    - JSON 
-    - browser making requests for html and css and JS files
-    - network tab in chrome dev tools
-    - header, response, status
-    - how to add axios
-    - get and post requests using axios
-  </section>
+  <script src="./demo.js"></script>
 </body>
+
 </html>

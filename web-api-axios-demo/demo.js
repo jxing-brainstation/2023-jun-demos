@@ -1,51 +1,71 @@
-/* JSON AND JAVASCRIPT OBJECTS */
 const student = {
     firstName: "John",
     lastName: "Doe",
-    course: "Web Development",
-};
+    course: "Software Engineering"
+}
 
-console.log("student as a string? ", student.toString())
+console.log(student);
 
+console.log("student as a string?", student.toString());
 const studentJSONString = JSON.stringify(student);
-const studentObj = JSON.parse(studentJSONString);
 
-console.log('Original JS object: ', student);
-console.log('Stringified JSON: ', studentJSONString);
-console.log('Parsed JS object: ', studentObj);
+console.log(studentJSONString);
 
+const studentObject = JSON.parse(studentJSONString);
 
-/* WEB APIS */
+console.log("parsed JS object", studentObject);
 
-const dogContainer = document.querySelector(".dogimg-container");
-const quotesContainer = document.querySelector(".quotes-container");
+// const invalidJSON = JSON.parse("['apples', 'pears']")
 
-// Dog pictures API: https://dog.ceo/dog-api/
-axios.get("https://dog.ceo/api/breeds/image/random")
-    .then((response) => {
-        const img = document.createElement("img");
-        img.style.maxWidth = "500px";
-        img.setAttribute("src", response.data.message);
-        dogContainer.appendChild(img);
-    });
+// console.log(invalidJSON)
+
+/**** WEB APIs using Axios */
+console.log(axios)
 
 
-/* DEVELOPER JOKES API: https://developerjokes.herokuapp.com */
+// myArray.map(book => {
 
-const BASE_URL = "https://developerjokes.herokuapp.com"
-// Get the element
-const jokesList = document.querySelector(".devjokes-container");
+// })
+axios
+    .get("https://dog.ceo/api/breeds/image/random")
+    .then(response => {
+        const dogImageInfo = response.data
+        console.log("response: ", response)
+        if (response.status === 200) {
+            console.log("request sucessful")
+        }
+        console.log("data from the API: ", response.data);
+        console.log(dogImageInfo.message); //alternatively, this is response.data.message, but that's harder to read
 
-// Data source of truth
-let jokes = [];
+        // now we do something with the data, such as DOM manipulation
 
-axios.get(`${BASE_URL}/jokes/`)
-    .then((response) => {
-        jokes = response.data;
-        displayJokes();
-    });
+        /*
+            Final HTML:
+            <img src="https://images.dog.ceo/breeds/terrier-yorkshire/20200319_143121.jpg" class="dogimg-container">
+        */
+        const dogImgElement = document.querySelector(".dogimg-container");
+        dogImgElement.src = dogImageInfo.message;
+    })
+    .catch(error => {
+        console.error("Error from api request:", error)
+    })
 
-function displayJokes() {
+
+const BASE_URL = "https://developerjokes.herokuapp.com";
+const API_KEY = "neocat";
+
+// NASA API EXAMPLE
+
+axios
+    .get(BASE_URL + "/jokes")
+    .then(res => {
+        const allJokes = res.data; // array of objects
+        console.log(allJokes)
+        const jokeListElement = document.querySelector(".devjokes-container")
+        displayJokes(jokeListElement, allJokes)
+    })
+
+function displayJokes(jokesList, jokes) {
     jokesList.innerHTML = ""; // clear html in jokesList before appending, avoids duplicates
 
     jokes.forEach((joke) => {
@@ -63,33 +83,35 @@ function displayJokes() {
     });
 }
 
+// order of events:
+/*
+The user submits the joke
+make a post call to the API endpoint to add the joke to the database
+*/
 
-// Let's post some new jokes
-
-const API_KEY = "neocat"
-const jokesForm = document.querySelector("#jokeForm");
-jokesForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+const jokeForm = document.querySelector('#jokeForm');
+jokeForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const question = e.target.question.value;
+    const answer = e.target.answer.value;
 
     const newJoke = {
-        question: event.target.question.value,
-        answer: event.target.answer.value
-    };
-
-    console.log("submit");
-    // Post it to the API
-    axios.post(`${BASE_URL}/jokes/?api_key=${API_KEY}`, newJoke)
-        .then((response) => {
-            alert("Joke successfullys submitted")
-            jokes = response.data.jokes;
-            displayJokes();
-
-            // If the API you're using *doesn't* provide the updated list in the response
-            // then you could make another axios.get request here
-            // then update your list of jokes
-        });
-
-    jokesForm.reset();
-});
-
-// NASA api: https://api.nasa.gov/
+        question: question,
+        answer: answer
+    }
+    axios
+        .post(`${BASE_URL}/jokes?api_key=${API_KEY}`, newJoke)
+        .then(response => {
+            console.log(response.data);
+            /*response.data looks like {
+                message: "was successful",
+                jokes: [{}, {}, {}]
+            }
+            */
+            const jokeListElement = document.querySelector(".devjokes-container")
+            displayJokes(jokeListElement, response.data.jokes)
+        })
+        .catch(error => {
+            console.error("Error from posting a joke: ", error)
+        })
+})
