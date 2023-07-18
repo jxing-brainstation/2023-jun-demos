@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversions & Coercions - Demo</title>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <h2>Review the 7 Primitives</h2>
+  <ol>
+    <li>string</li>
+    <li>number</li>
+    <li>boolean</li>
+    <li>null</li>
+    <li>undefined</li>
+    <li>bigint</li>
+    <li>symbol</li>
+  </ol>
+  <h3>everything else is an object (objects, functions, arrays, etc.)</h3>
+  <h2>Explicit conversions (type casting): there are only 3</h2>
+  <ul>
+    <li>String()</li>
+    <li>Number()</li>
+    <li>Boolean()
+      <ul>
+        <li>
+          falsy values (there are only 6)
+          <ol>
+            <li>false</li>
+            <li>null</li>
+            <li>undefined</li>
+            <li>"" or ''(the empty string)</li>
+            <li>0</li>
+            <li>NaN</li>
+          </ol>
+        </li>
+        <li>
+          truthy values (everything else)
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Implicit coercions</h2>
+  <ul>
+    <li>mathematical operations: +, -, *, /, %, **</li>
+    <li>boolean operations: ! , && , ||</li>
+  </ul>
+
+  <h2>Equality operators</h2>
+  <ul>
+    <li>== (do not use) does coercion</li>
+    <li>=== does not allow for coercion</li>
+  </ul>
+
+  <h2>Short circuiting evaluations of expressions with boolean operators</h2>
+  <ul>
+    <li>&&</li>
+    <li>||</li>
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+typeof 123;
+'number'
+typeof [];
+'object'
+typeof {}
+'object'
+typeof function(){}
+
+'function'
+typeof false;
+'boolean'
+String(true);
+'true'
+String(banana)
+VM1217:1 Uncaught ReferenceError: banana is not defined
+    at <anonymous>:1:8
+(anonymous) @ VM1217:1
+Number(5);
+5
+Number(false)
+0
+Number(true)
+1
+Number([])
+0
+Number([1,2,3])
+NaN
+Number({})
+NaN
+Number({age:4})
+NaN
+NaN
+NaN
+isNaN(NaN)
+true
+NaN === NaN
+false
+NaN == NaN
+false
+Math.sqr
+undefined
+Math.sqrt(-1)
+NaN
+1/Infinity
+0
+-Infinity
+-Infinity
+parseInt(12.3)
+12
+parseInt("asdf")
+NaN
+Infinity/Infinity
+NaN
+true
+true
+false
+false
+!"hello"
+false
+"hello"
+'hello'
+!"hello" === false
+true
+Boolean(0)
+false
+Boolean(-0)
+false
+Boolean("")
+false
+Boolean(NaN)
+false
+Boolean(123)
+true
+Boolean("   ")
+true
+Boolean("hello")
+true
+Boolean([])
+true
+Boolean([1,2,3])
+true
+Boolean({})
+true
+Boolean("0")
+true
+Boolean(function(){})
+true
+3 ** 2
+9
+"hello" + "world"
+'helloworld'
+String([46])
+'46'
+"8" + "12" + 10
+'81210'
+"8" + "12" + String(10)
+'81210'
+String(true) + 2
+'true2'
+Number(true) + 2
+3
+Number([]) * 3
+0
+3 % Number([2])
+1
+Number([2])
+2
+12 / Number("three")
+NaN
+Number("three")
+NaN
+12 / NaN
+NaN
+"1" == [1]
+true
+const myFruits = ["apple", "pear"]
+undefined
+myFruits === ["apple", "pear"]
+false
+myFruits === myFruits
+true
+const myFruitsClone = myFruits
+undefined
+myFruitsClone === myFruits
+true
+Boolean(null)
+false
+!null
+true
+!Boolean(null)
+true
+!Boolean("hi")
+false
+!!null
+false
+Boolean(null)
+false
+!!3
+true
+Boolean(3)
+true
+!!'true'
+true
+Boolean('true')
+true
+Boolean(3)
+true
+const person = {name:"john"}
+undefined
+person.name
+'john'
+person.age
+undefined
+if (person && person.age) {
+    console.log(person)
+}
+undefined
+if (person.age) {
+    console.log(person)
+}
+undefined
+let myAge = 15;
+undefined
+myAge = "apples"
+'apples'
