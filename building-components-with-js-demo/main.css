@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #212121;
+}
+
+.hero-banner__text {
+  font-size: 3rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgb(1, 177, 177);
+  color: white;
+}
+
+.header__image {
+  width: 100%;
+}
+
+.party-info {
+  text-align: center;
+  font-size: 2rem;
+  -webkit-text-decoration: rgb(1, 177, 177) double underline;
+          text-decoration: rgb(1, 177, 177) double underline;
+}/*# sourceMappingURL=main.css.map */
