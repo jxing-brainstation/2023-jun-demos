@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Socks",
+        "image": "https://images.dog.ceo/breeds/spaniel-japanese/n02085782_230.jpg",
+        "id": 1
+    },
+    {
+        "name": "Oreo",
+        "image": "https://images.dog.ceo/breeds/keeshond/n02112350_6980.jpg",
+        "id": 2
+    },
+    {
+        "name": "Charlie",
+        "image": "https://images.dog.ceo/breeds/sheepdog-english/Finnigan_Old_English_Sheepdog_sml.jpg",
+        "id": 3
+    }
+]
