@@ -1,0 +1,14 @@
+.page-container {
+    height: 100vh;
+    background-color: cornsilk;
+
+    &--dark {
+        height: 100vh;
+        background-color: cornflowerblue;
+    }
+}
+
+.light-dark-mode-toggle {
+    border-radius: 5px;
+    height: 2rem;
+}
