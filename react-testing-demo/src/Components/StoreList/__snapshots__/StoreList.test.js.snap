@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StoreList component matches the snapshot 1`] = `
+exports[`StoreList matches the snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
