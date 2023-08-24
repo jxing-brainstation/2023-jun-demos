@@ -2,7 +2,7 @@ import React from 'react'
 import StoreCard from '../StoreCard/StoreCard';
 import './StoreList.css'
 
-export default function StoreList({stores, sale, loadData}) {
+export default function StoreList({ stores, sale, loadData }) {
     const getMoreStores = () => {
         console.log("Hello world");
         loadData();
@@ -10,7 +10,7 @@ export default function StoreList({stores, sale, loadData}) {
 
     return (
         <div className={sale ? "sale" : ""}>
-            <h2>All the Stores</h2>
+            <h2>All the Stores!!!</h2>
 
             {stores.map((item) => (
                 <StoreCard key={item.id} address={item.address} />
