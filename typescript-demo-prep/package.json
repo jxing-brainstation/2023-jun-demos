@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -w --preserveWatchOutput & nodemon -q -w dist dist/*.js",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "dev": "tsc -w --preserveWatchOutput & nodemon -q -w dist dist/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   }
